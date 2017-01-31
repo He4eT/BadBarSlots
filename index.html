@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Init Slot Machine</title>
+	<link rel="stylesheet" href="css/style.css" type='text/css'>
+</head>
+<body>
+	<div class="wrap">
+		<textarea name="" class="data" cols="20" rows="24">{"number":
+
+3
+
+,"items": [
+"Водка",
+
+"Джин",
+"Тоник",
+"Гренадин",
+"Пусиджус",
+"Сопли",
+"Блю кюрасао",
+"Яблочный",
+"Апельсиновый",
+"Вишнёвый",
+
+"Ничего"]}</textarea>
+		<div class="start">
+			OK
+		</div>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script>
+		$(".start").on('click', () => {
+			try	{
+				let data = JSON.parse($(".data").val())
+				let params = encodeURI(JSON.stringify(data))
+				let newUrl = location.href.replace("index.html", "slots.html")
+				location.href = newUrl + "?" + params
+			} catch (e) {
+				alert(e)
+			}
+		})
+	</script>
+</body>
+</html>
