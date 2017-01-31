@@ -31,9 +31,16 @@
         
         $('.slot').html(items)
         
+        let sound = new Audio('snd/noize.mp3')
+        let playSound = () => {
+            sound.play()
+        }
+
         $('.slot').jSlots({
             number: data.number,
             spinner : '#playNormal',
+            onStart: playSound,
+            time : 6000,
             // winnerNumber : 7
         });
     </script>
