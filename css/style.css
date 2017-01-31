@@ -1,3 +1,9 @@
+@keyframes load {
+  0% { opacity: 0; }
+  30% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 html, body {
 	margin: 0;
 	padding: 0;
@@ -11,29 +17,37 @@ body {
 	background-color: #212121;
 }
 
+.nocursor {
+	cursor : none;
+}
+
 .wrap {
-	padding: 50px;
+	animation: load 0.4s ease-in;
+	padding: 10vh;
 	background-color: #fff;
 	background-color: #424242;
-	box-shadow: 0 0 50px 1px #ff3000;
+	box-shadow: 0 0 6vh 0.5vh #ff3000;
+	border: 2px solid #ffa52e;
 }
 
 .logo {
 	text-align: center;
-	margin-bottom: 50px;
+	margin-bottom: 8vh;
 }
 
 .logo img {
-	filter: drop-shadow(0px 12px 20px rgba(255,48,0,0.5));
+	height: 30vh;
+	filter: drop-shadow(0px 12px 10px rgba(255,48,0,0.5));
 }
 
 .jSlots-wrapper {
 	overflow: hidden;
-	height: 100px;
+	height: 13vh;
 	display: inline-block; /* to size correctly, can use float too, or width*/
 	transform: translateZ(0);
 	background-color: #212121;
-	padding: 0 5px;
+	padding: 0 1vh;
+	box-shadow: 0 0 2vh 0.5vh #000 inset;
 }
 
 .jSlots-wrapper:before,
@@ -42,7 +56,7 @@ body {
 	position: absolute;
 	left: 0;
 	right: 0;
-	box-shadow: 0 0 10px 3px #000;	
+	box-shadow: 0 0 2vh 1vh #000;	
 	z-index: 10;
 }
 
@@ -54,28 +68,51 @@ body {
 	bottom: 0;
 }
 
-ul {
-	padding: 0;
-	margin: 0;
-	list-style: none;
-}
-
 .slot {
 	float: left;
-	margin: 0 10px;
-	box-shadow: 0 0 10px 2px #ff3000;
+	margin: 0 2vh;
+	box-shadow: 0 0 2vh 2px #ff3000;
 }
 
 .slot li {
 	text-align: center;
-	padding: 0 30px;
-	line-height: 100px;
+	padding: 0 4vh;
+	line-height: 13vh;
 	font-size: 2rem;
 	background-color: #616161;
 	color: #ffa52e;
 	font-family: monospace;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	text-shadow: #ff3000 0px 0px 25px;
+	text-shadow: #ff3000 0px 0px 10px;
+}
 
+ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+
+.data {
+	background-color: inherit;
+	line-height: 2.5vh;
+	font-size: 1.5rem;
+	color: orange;
+	border: none; 
+}
+
+.start {
+	border: 2px solid orange;
+	padding: 2vh 3vh;
+	color: orange;
+	text-align: center;
+	font-size: 2rem;
+	cursor: pointer;
+}
+
+.start:hover {
+	border-color: red;
+	color: red;
+	text-align: center;
 }
