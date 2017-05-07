@@ -4,6 +4,10 @@
   100% { opacity: 1; }
 }
 
+* {
+	outline: none;
+}
+
 html, body {
 	margin: 0;
 	padding: 0;
@@ -23,11 +27,13 @@ body {
 
 .wrap {
 	animation: load 0.4s ease-in;
+	font-family: monospace;
 	padding: 10vh;
 	background-color: #fff;
 	background-color: #424242;
 	box-shadow: 0 0 6vh 0.5vh #ff3000;
 	border: 2px solid #ffa52e;
+	color: orange;
 }
 
 .logo {
@@ -81,7 +87,6 @@ body {
 	font-size: 2rem;
 	background-color: #616161;
 	color: #ffa52e;
-	font-family: monospace;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	text-shadow: #ff3000 0px 0px 10px;
@@ -96,8 +101,8 @@ ul {
 
 .data {
 	background-color: inherit;
-	line-height: 2.5vh;
-	font-size: 1.5rem;
+	/*line-height: 2.5vh;
+	font-size: 1.5rem;*/
 	color: orange;
 	border: none; 
 }
@@ -107,12 +112,28 @@ ul {
 	padding: 2vh 3vh;
 	color: orange;
 	text-align: center;
-	font-size: 2rem;
 	cursor: pointer;
 }
 
 .start:hover {
 	border-color: red;
 	color: red;
-	text-align: center;
+}
+
+.slot-wrap {
+	overflow: hidden;
+}
+
+.welcome {
+	display: flex;
+	flex-direction: row;
+	flex: 0 1 0 0;
+}
+
+.welcome .description {
+		margin-right: 5rem;
+}
+
+.welcome .settimgs {
+
 }

@@ -2,41 +2,44 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Init Slot Machine</title>
+	<title>BAD BAR Slots</title>
 	<link rel="stylesheet" href="css/style.css" type='text/css'>
 </head>
 <body>
-	<div class="wrap">
-		<textarea name="" class="data" cols="20" rows="24">{"number":
+	<div class="wrap welcome">
+		<div class="description">
+			<div class="logo">
+	            <img src="img/logo.svg" alt="">
+	        </div>
+		</div>
+		<div class="settings">
+<textarea name="" class="data" cols="20" rows="20" autofocus="">{"number":
 
 3
 
 ,"items": [
-"Водка",
 
-"Джин",
-"Тоник",
-"Гренадин",
-"Пусиджус",
+"Водка",
 "Сопли",
-"Блю кюрасао",
-"Яблочный",
-"Апельсиновый",
-"Вишнёвый",
+"Пусиджус",
 
 "Ничего"]}</textarea>
-		<div class="start">
-			OK
+			<div class="start">
+				Поехали!
+			</div>
 		</div>
 	</div>
+	<form action="slots.html" method="get">
+		<input type="hidden" name='params' class="params">
+	</form>
 	<script src="js/jquery.min.js"></script>
 	<script>
 		$(".start").on('click', () => {
 			try	{
 				let data = JSON.parse($(".data").val())
-				let params = encodeURI(JSON.stringify(data))
-				let newUrl = location.href.replace("index.html", "slots.html")
-				location.href = newUrl + "?" + params
+				let params = encodeURIComponent(JSON.stringify(data))
+				$('.params').val(params)
+				$('form').submit()
 			} catch (e) {
 				alert(e)
 			}
